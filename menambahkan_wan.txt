@@ -1,0 +1,78 @@
+=========================================================================================
+WAN Bridge
+
+If adding to WAN PPP slot
+Conn Mode	: PPPoE_Bridged
+Service List	: INTERNET or Other
+
+FIBERHOME
+PPPoE : PPPoE_Routed
+Service List : TR069,INTERNET
+InternetGatewayDevice.LANDevice.1.LANEthernetInterfaceConfig.1,InternetGatewayDevice.LANDevice.1.WLANConfiguration.1,InternetGatewayDevice.LANDevice.1.WLANConfiguration.5
+
+FIBERHOME
+PPPoE : PPPoE_Routed
+Service List : TR069,INTERNET
+InternetGatewayDevice.LANDevice.1.LANEthernetInterfaceConfig.1,InternetGatewayDevice.LANDevice.1.WLANConfiguration.1,InternetGatewayDevice.LANDevice.1.WLANConfiguration.5
+
+If adding to WAN IP slot
+Conn Mode	: IP_Bridged
+Service List	: INTERNET or Other
+
+=====================================================================
+
+Wan Route/PPPoE
+Conn Mode	: IP_Routed
+Service List	: INTERNET
+
+=====================================================================
+SSID Password
+Security mode: 11i or WPAand11i
+
+SSID Without Password
+Security mode: None
+
+=====================================================================
+Bind/Tag LAN/WLAN Interface
+
+Fill manually with parameters below, use comma separator for more than one parameter
+
+Specifically for zte f670L type, also fill with its wan in the "Wan Interface" column
+
+WAN IP Interface: 
+Wan 1: InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANIPConnection.1
+Wan 2: InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANIPConnection.2
+Wan 3: InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANIPConnection.3
+Wan 4: InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANIPConnection.4
+
+WAN PPP Interface: 
+Wan 1: InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.1
+Wan 2: InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.2
+Wan 3: InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.3
+Wan 4: InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.4
+------------------------------------------------------------------
+
+For Bind LAN interface other than f670L, fill only LAN interface/WLAN interface in WAN config
+
+LAN Interface:
+LAN 1: InternetGatewayDevice.LANDevice.1.LANEthernetInterfaceConfig.1
+LAN 2: InternetGatewayDevice.LANDevice.1.LANEthernetInterfaceConfig.2
+LAN 3: InternetGatewayDevice.LANDevice.1.LANEthernetInterfaceConfig.3
+LAN 4: InternetGatewayDevice.LANDevice.1.LANEthernetInterfaceConfig.4
+
+SSID1 : InternetGatewayDevice.LANDevice.1.WLANConfiguration.1
+SSID2 : InternetGatewayDevice.LANDevice.1.WLANConfiguration.2
+SSID3 : InternetGatewayDevice.LANDevice.1.WLANConfiguration.3
+SSID4 : InternetGatewayDevice.LANDevice.1.WLANConfiguration.4
+
+SSID5 : InternetGatewayDevice.LANDevice.1.WLANConfiguration.5
+SSID6 : InternetGatewayDevice.LANDevice.1.WLANConfiguration.6
+SSID7 : InternetGatewayDevice.LANDevice.1.WLANConfiguration.7
+SSID8 : InternetGatewayDevice.LANDevice.1.WLANConfiguration.8
+
+
+Use comma separator if more than one interface
+Example
+InternetGatewayDevice.LANDevice.1.LANEthernetInterfaceConfig.1,InternetGatewayDevice.LANDevice.1.LANEthernetInterfaceConfig.2,InternetGatewayDevice.LANDevice.1.LANEthernetInterfaceConfig.3,InternetGatewayDevice.LANDevice.1.LANEthernetInterfaceConfig.4,InternetGatewayDevice.LANDevice.1.WLANConfiguration.1,InternetGatewayDevice.LANDevice.1.WLANConfiguration.5
+
+Note : for dual band, SSID 5G is in SSID 6 and above
