@@ -2,8 +2,12 @@
   "genieacs_url": "http://192.168.8.89:7557",
   "genieacs_username": "admin",
   "genieacs_password": "admin",
-  "company_header": "WiFiber MGMT Portal",
-  "footer_info": "Unlimited Internet",
+  "company_header": "NBB Wifiber (Managed by Admin Wifiber)",
+  "footer_info": "Powered by CyberNet",
   "server_port": 3001,
-  "server_host": "localhost"
+  "server_host": "localhost",
+  "contact_phone": "03036783333",
+  "contact_whatsapp": "+923036783333",
+  "contact_email": "your.official.isp@gmail.com",
+  "github_url": "https://github.com/yourofficialisp"
 }

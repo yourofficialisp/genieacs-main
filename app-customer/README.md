@@ -1,8 +1,8 @@
-# 🚀 GenieACS Customer Portal
+# 🚀 app-customer
 
-![GenieACS Customer Portal Hero](public/img/hero.png)
+![app-customer Hero](public/img/hero.png)
 
-Portal customer modern dan responsif untuk ISP yang menggunakan **GenieACS**. Memberikan pengalaman manajemen perangkat mandiri (*self-service*) bagi customer You tanpa perlu intervensi admin.
+Modern and responsive customer portal for ISPs using **GenieACS**. Provides self-service device management experience for your customers without admin intervention.
 
 [![GitHub license](https://img.shields.io/github/license/yourofficialisp/app-customer)](https://github.com/yourofficialisp/app-customer/blob/main/LICENSE)
 [![GitHub stars](https://img.shields.io/github/stars/yourofficialisp/app-customer)](https://github.com/yourofficialisp/app-customer/stargazers)
@@ -10,24 +10,24 @@ Portal customer modern dan responsif untuk ISP yang menggunakan **GenieACS**. Me
 
 ---
 
-## ✨ Fitur Utama
+## ✨ Main Features
 
-- 🔐 **Login Tanpa Password**: Customer masuk menggunakan ID/Tag unik (misal: Nomor HP atau ID Customer) yang terdaftar di GenieACS.
+- 🔐 **Passwordless Login**: Customers log in using unique ID/Tag (e.g., Phone Number or Customer ID) registered in GenieACS.
 - 📊 **Real-time ONU Dashboard**:
-  - Status Device (Online/Offline).
-  - Informasi Sinyal (RX Power/Redaman).
-  - Detail PPPoE (IP Address & Username).
-  - Informasi Device (Model, Serial Number, Versi Firmware).
-  - Waktu Aktif (*Uptime*) ONU.
+  - Device Status (Online/Offline).
+  - Signal Information (RX Power/Attenuation).
+  - PPPoE Details (IP Address & Username).
+  - Device Information (Model, Serial Number, Firmware Version).
+  - ONU Uptime.
 - 📶 **WiFi Self-Service**:
-  - Ganti Name WiFi (SSID) secara mandiri.
-  - Ganti Password WiFi (Min 8 characters).
-  - Auto mendukung konfigurasi Dual-Band (2.4GHz & 5GHz).
+  - Change WiFi Name (SSID) independently.
+  - Change WiFi Password (Min 8 characters).
+  - Automatic Dual-Band configuration support (2.4GHz & 5GHz).
 - 🔄 **Remote Management**:
-  - Reboot perangkat langsung dari dashboard.
-  - Management Tag/ID Customer mandiri.
-- 📱 **Mobile Friendly**: UI responsif menggunakan Bootstrap 5 dengan desain modern dan *glassmorphism*.
-- 🛠️ **Automated Deployment**: Dilengkapi dengan script installer untuk Ubuntu & Armbian.
+  - Reboot device directly from dashboard.
+  - Customer Tag/ID management.
+- 📱 **Mobile Friendly**: Responsive UI using Bootstrap 5 with modern design and glassmorphism.
+- 🛠️ **Automated Deployment**: Includes installer scripts for Ubuntu & Armbian.
 
 ---
 
@@ -36,45 +36,45 @@ Portal customer modern dan responsif untuk ISP yang menggunakan **GenieACS**. Me
 - **Backend**: Node.js, Express.js
 - **Templates**: EJS (Embedded JavaScript)
 - **Styling**: Vanilla CSS, Bootstrap 5, Bootstrap Icons
-- **Integrasi**: GenieACS REST API (v1.2+)
+- **Integration**: GenieACS REST API (v1.2+)
 - **Process Manager**: PM2
 
 ---
 
-## 🚀 Cara Instalasi (Ubuntu / Armbian)
+## 🚀 Installation Guide (Ubuntu / Armbian)
 
-Script installer akan menangani instalasi Node.js, PM2, dependensi, dan konfigurasi awal secara otomatis.
+The installer script will handle Node.js, PM2, dependencies, and initial configuration automatically.
 
-### 1. Persiapan
-Pastikan You memiliki akses `root` atau `sudo`.
+### 1. Preparation
+Make sure you have `root` or `sudo` access.
 
 ```bash
 # Clone repository
 git clone https://github.com/yourofficialisp/app-customer.git
 cd app-customer
 
-# Beri izin eksekusi pada script installer
+# Give execute permission to installer script
 chmod +x install.sh
 ```
 
-### 2. Jalankan Installer
+### 2. Run Installer
 ```bash
 sudo bash install.sh
 ```
 
-- Script akan menanyakan apakah You ingin menginstall Node.js (v18).
-- Script akan menanyakan apakah You ingin menginstall PM2.
-- File `settings.json` akan dibuat otomatis dengan target GenieACS ke `localhost:7557`.
+- Script will ask if you want to install Node.js (v18).
+- Script will ask if you want to install PM2.
+- `settings.json` file will be created automatically with GenieACS target to `localhost:7557`.
 
-### 3. Completed
-Setelah instalasi successful, portal dapat diakses di:
+### 3. Complete
+After successful installation, the portal can be accessed at:
 `http://[IP-SERVER]:3001/login`
 
 ---
 
-## ⚙️ Konfigurasi Manual
+## ⚙️ Manual Configuration
 
-Jika GenieACS berada di server yang berbeda, You dapat mengedit file `settings.json`:
+If GenieACS is on a different server, you can edit the `settings.json` file:
 
 ```json
 {
@@ -87,13 +87,13 @@ Jika GenieACS berada di server yang berbeda, You dapat mengedit file `settings.j
   "server_host": "localhost"
 }
 ```
-*Jangan lupa restart aplikasi setelah mengedit config:* `pm2 restart app-customer`
+*Don't forget to restart the application after editing config:* `pm2 restart app-customer`
 
 ---
 
-## 🔄 Cara Update
+## 🔄 How to Update
 
-Untuk melakukan update ke versi terbaru tanpa kehilangan konfigurasi:
+To update to the latest version without losing configuration:
 
 ```bash
 chmod +x update.sh
@@ -102,32 +102,39 @@ sudo bash update.sh
 
 ---
 
-## 📋 Struktur Folder
+## 📋 Folder Structure
 
 ```text
 app-customer/
-├── config/             # Management konfigurasi & cache
-├── public/             # Asset statis (CSS, Images, JS)
-├── routes/             # Logika Express (Customer Portal)
-├── views/              # Template EJS
-├── app-customer.js     # Entry point aplikasi
+├── config/             # Configuration & cache management
+├── public/             # Static assets (CSS, Images, JS)
+├── routes/             # Express logic (Customer Portal)
+├── views/              # EJS templates
+├── app-customer.js     # Application entry point
 ├── install.sh          # Auto-installer Ubuntu/Armbian
-├── settings.json       # Konfigurasi aplikasi
-└── package.json        # Dependensi Node.js
+├── settings.json       # Application configuration
+└── package.json        # Node.js dependencies
 ```
 
 ---
 
-## 🤝 Kontribusi
+## 🤝 Contribution
 
-Kontribusi selalu terbuka! Silakan fork repository ini, buat branch baru, dan kirimkan Pull Request.
-
----
-
-## 📄 Lisensi
-
-Didistribusikan di bawah Lisensi **ISC**. View `LICENSE` untuk detailnya.
+Contributions are always welcome! Please fork this repository, create a new branch, and submit a Pull Request.
 
 ---
-🚀 **Dibuat untuk memudahkan manajemen ISP modern.**
-Managed by Admin Wifiber
+
+## 📄 License
+
+Distributed under **ISC License**. See `LICENSE` for details.
+
+---
+🚀 **Created to simplify modern ISP management.**
+Managed by [Admin Wifiber](https://github.com/yourofficialisp)
+
+## 📞 Contact & Support
+
+- WhatsApp: +923036783333
+- Phone: 03036783333
+- Email: your.official.isp@gmail.com
+- Telegram: @yourofficialisp
