@@ -83,7 +83,7 @@ function startSettingsWatcher() {
   }
 }
 
-// Mulai watcher saat modul dimuat
+// Mulai watcher while modul dimuat
 startSettingsWatcher();
 
 module.exports = {

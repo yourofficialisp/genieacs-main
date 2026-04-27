@@ -45,5 +45,5 @@ console.log('? Test message to be sent:');
 console.log(testMessage);
 console.log('');
 
-console.log('✅ Script test selesai. Jalankan aplikasi utama untuk test pengiriman pesan.');
-console.log('💡 Tips: Gunakan "node scripts/restart-on-error.js" untuk menjalankan dengan auto-restart'); 
+console.log('✅ Script test completed. Jalankan aplikasi utama for test pengiriman pesan.');
+console.log('💡 Tips: Gunakan "node scripts/restart-on-error.js" for menjalankan with auto-restart'); 

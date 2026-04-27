@@ -303,9 +303,9 @@ async function monitorRXPower(threshold = -27) {
         
         // if (conn) { // Removed Mikrotik connection
         //     try {
-        //         // Dapatkan semua PPPoE secret dari Mikrotik
+        //         // Dapatkan semua PPPoE secret from Mikrotik
         //         pppoeSecrets = await conn.write('/ppp/secret/print');
-        //         console.log(`Ditemukan ${pppoeSecrets.length} PPPoE secret`);
+        //         console.log(`Found ${pppoeSecrets.length} PPPoE secret`);
         //     } catch (error) {
         //         console.error('Error mendapatkan PPPoE secret:', error.message);
         //     }

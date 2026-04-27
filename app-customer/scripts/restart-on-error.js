@@ -72,7 +72,7 @@ function startApp() {
     });
 }
 
-// Fungsi untuk handle error aplikasi
+// Fungsi for handle error aplikasi
 function handleAppError() {
     if (isRestarting) return;
     
